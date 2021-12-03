@@ -1,0 +1,30 @@
+<script>
+jQuery(document).ready(function( $ ) {
+
+      flbInit('https://www.flexbook.cz/ajax.php',4, [
+
+             {
+               type: 'flbProfile',
+               placeHolder: 'flexbook_profile',
+               params: {
+                               externalAccount: 1,
+                               extraDiv: 'all',
+                       },
+             },
+
+             {
+               type: 'flbEventList',
+               placeHolder: 'flexbook_event_list',
+               params: {
+                 center: [155],
+                 onPageCount: 5,
+                 format: { datetime: 'D d.m.y H:i' }
+               },
+             },
+       ],
+       { externalAccount: 1 }
+       );
+
+
+});
+</script>
