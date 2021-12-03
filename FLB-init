@@ -1,0 +1,50 @@
+<script>
+jQuery(document).ready(function( $ ) {
+
+      flbInit('https://www.flexbook.cz/ajax.php',4, [
+
+             {
+               type: 'flbProfile',
+               placeHolder: 'flexbook_profile',
+               params: {
+                               externalAccount: 1,
+                               extraDiv: 'all',
+                       },
+             },
+
+             {
+               type: 'flbEventWeekList',
+               placeHolder: 'flexbook_event_weeklist',
+               params: {
+                 center: [155],
+                 format: { datetime: 'D d.m.y H:i' }
+               },
+             },
+
+             {
+               type: 'flbEventCalendar',
+               placeHolder: 'flexbook_event_calendar',
+               params: {
+                 center: [155],
+                 timeMin: '12:00',
+                 timeMax: '16:00',
+                 format: { datetime: 'D d.m.y H:i' }
+               },
+             },
+
+             {
+               type: 'flbEventList',
+               placeHolder: 'flexbook_event_list',
+               params: {
+                 center: [155],
+                 onPageCount: 5,
+                 format: { datetime: 'D d.m.y H:i' }
+               },
+             },
+       ],
+       { externalAccount: 1 }
+       );
+
+
+});
+</script>
