@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Seznam akcí</title>
+        <!-- FlexBook JavaScripts -->
+        <script src="https://www.flexbook.cz/jq/jquery.js"></script>
+        <script src="https://www.flexbook.cz/flbv2.js"></script>
+    </head>
+
+<body>
+    <h1>PIVOVAR</h1>
+    <a href="web_seznam_akci.html">Seznam akcí</a>
+    |
+    <a href="web_kalendar_akci.html">Kalendář akcí</a>
+    |
+    <a href="web_tydenni_rozpis_akci.html">Týdenní rozpis akcí</a>
+
+    <h2>Seznam akcí</h2>
+    <a href="web_seznam_akci.html">Vše</a>
+    |
+    <a href="web_seznam_akci_kurzy.html">Kurzy</a>
+    |
+    <a href="web_seznam_akci_prohlidky.html">Prohlídky</a>
+
+    <p></p>
+    
+    <div id="flexbook_event_list">&nbsp;</div>
+
+    <script>
+        jQuery(document).ready(function( $ ) {
+        
+              flbInit('https://www.flexbook.cz/ajax.php',4, [
+        
+                     {
+                       type: 'flbProfile',
+                       placeHolder: 'flexbook_profile',
+                       params: {
+                                       externalAccount: 1,
+                                       extraDiv: 'all',
+                               },
+                     },
+        
+                     {
+                       type: 'flbEventList',
+                       placeHolder: 'flexbook_event_list',
+                       params: {
+                         center: [155],
+                         onPageCount: 5,
+                         tag: ['kurz'],
+                         format: { datetime: 'D d.m.y H:i' }
+                       },
+                     },
+               ],
+               { externalAccount: 1 }
+               );
+        
+        
+        });
+        </script>
+</body>
+
+</html>
