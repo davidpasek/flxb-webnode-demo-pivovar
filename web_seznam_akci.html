@@ -33,34 +33,40 @@
     <div id="flexbook_event_list">&nbsp;</div>
 
     <script>
-        jQuery(document).ready(function( $ ) {
+        jQuery(document).ready(function( $ ) 
+          {
+            flbInit('https://www.flexbook.cz/ajax.php',4, 
+              [
         
-              flbInit('https://www.flexbook.cz/ajax.php',4, [
+                {
+                  type: 'flbProfile',
+                  placeHolder: 'flexbook_profile',
+                  params: 
+                  {
+                    externalAccount: 1,
+                    extraDiv: 'all',
+                  },
+                },
         
-                     {
-                       type: 'flbProfile',
-                       placeHolder: 'flexbook_profile',
-                       params: {
-                                       externalAccount: 1,
-                                       extraDiv: 'all',
-                               },
-                     },
+                {
+                  type: 'flbEventList',
+                  placeHolder: 'flexbook_event_list',
+                  params: 
+                  {
+                    center: [155],
+                    onPageCount: 5,
+                    format: { datetime: 'D d.m.y H:i' }
+                  },
+                },
+              ],
+              {
+                flbProfile: { externalAccount: 1 },
+                flbAll: { language: 'cz' },
+              }
+            );
         
-                     {
-                       type: 'flbEventList',
-                       placeHolder: 'flexbook_event_list',
-                       params: {
-                         center: [155],
-                         onPageCount: 5,
-                         format: { datetime: 'D d.m.y H:i' }
-                       },
-                     },
-               ],
-               { externalAccount: 1 }
-               );
-        
-        
-        });
+          }
+        );
         </script>
 </body>
 
