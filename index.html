@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Kalendář akcí</title>
+        <title>FlexBook demo Pivovar</title>
 
         <!-- FlexBook JavaScripts -->
         <script src="https://www.flexbook.cz/jq/jquery.js"></script>
@@ -10,14 +10,39 @@
 
 <body>
     <h1>PIVOVAR</h1>
+
     <hr>
-    <div id="flexbook_profile" style="width: 200px; padding-bottom: 8px; float: right;">&nbsp;</div>
-    <hr>
+    <div id="flexbook_profile" style="width: 200px; padding-bottom: 8px;">&nbsp;</div>
+    <hr >
+
     <a href="web_seznam_akci.html">Seznam akcí</a>
     |
     <a href="web_kalendar_akci.html">Kalendář akcí</a>
     |
     <a href="web_tydenni_rozpis_akci.html">Týdenní rozpis akcí</a>
-</body>
 
+    <script>
+        jQuery(document).ready(function( $ ) {
+        
+              flbInit('https://www.flexbook.cz/ajax.php',4, [
+        
+                     {
+                       type: 'flbProfile',
+                       placeHolder: 'flexbook_profile',
+                       params: {
+                                       externalAccount: 1,
+                                       extraDiv: 'all',
+                               },
+                     }
+        
+               ],
+                { 
+                  externalAccount: 1
+                }
+               );
+        
+        
+        });
+        </script>
+</body>
 </html>
